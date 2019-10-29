@@ -25,6 +25,8 @@ public class RobotMap {
   public static VictorSPX driveLeft2;
   public static VictorSPX driveRight1;
   public static VictorSPX driveRight2;
+  public static VictorSPX lift;
+  public static DigitalInput liftLimit;
 
   public static void init() {
     // the driving stuffs
@@ -32,5 +34,8 @@ public class RobotMap {
     driveLeft2 = new VictorSPX(7);
     driveRight1 = new VictorSPX(9);
     driveRight2 = new VictorSPX(10);
+    //lift stuff
+    lift = new VictorSPX(8);
+    liftLimit = new DigitalInput(4);
   }
 }

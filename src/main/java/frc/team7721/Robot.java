@@ -10,23 +10,31 @@ package frc.team7721;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import frc.team7721.commands.DriveCommand;
+import frc.team7721.commands.LiftExCommand;
 import frc.team7721.subsystems.*;
 import edu.wpi.first.wpilibj.command.*;
-
 
 /**
  * This is a demo program showing the use of the RobotDrive class, specifically
  * it contains the code necessary to operate a robot with tank drive.
  */
 public class Robot extends TimedRobot {
+
   public static DriveSubsystem driveSubsystem;
 
   public static DriveCommand driveCommand;
+  public static LiftExSubsystem liftExSubsystem;
+  public static LiftExCommand liftExCommand;
 
   @Override
   public void robotInit() {
+    RobotMap.init();
     OI.init();
     driveSubsystem = new DriveSubsystem();
+    liftExSubsystem = new LiftExSubsystem();
+
+    liftExCommand = new LiftExCommand();
+
   }
 
   @Override
